@@ -88,15 +88,15 @@ class Sigmoid(Node):
 
         `x`: A numpy array-like object.
         """
-        return 1 / (1 + np.exp(-x))
+        return 1. / (1. + np.exp(-x))
 
 
 
     def forward(self):
         # This is a dummy value to prevent numpy errors
         # if you test without changing this method.
-        x = self.inbound_nodes[0].value
-        self.value = self._sigmoid(x)
+        input_value = self.inbound_nodes[0].value
+        self.value = self._sigmoid(input_value)
 
 """
 No need to change anything below here!
