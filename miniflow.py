@@ -48,9 +48,6 @@ class Add(Node):
         Node.__init__(self, inputs)
 
     def forward(self):
-        """
-        Set the value of this node (`self.value`) to the sum of it's inbound_nodes.
-        """
         sum = 0
         for input in self.inbound_nodes:
             sum += input.value
@@ -62,9 +59,6 @@ class Mul(Node):
         Node.__init__(self, inputs)
 
     def forward(self):
-        """
-        Set the value of this node (`self.value`) to the sum of it's inbound_nodes.
-        """
         product = 1
         for input in self.inbound_nodes:
             product *= input.value
